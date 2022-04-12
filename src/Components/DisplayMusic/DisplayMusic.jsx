@@ -3,7 +3,7 @@ import React from 'react';
 
 const DisplayMusic = (props) => {
     return ( 
-        <table>
+        <table className='table'>
             <thead>
             <tr>
                 <th>Song Title</th>
@@ -14,14 +14,15 @@ const DisplayMusic = (props) => {
             </tr>
             </thead>
             <tbody>
-            {props.parentEntries.map((entry) => {
+            {props.parentEntries.map((entry, index) => {
+                {console.log("Entry: ", entry)}
                 return (
-                <tr>
-                    <td>{entry.songTitle}</td>
+                <tr key={index}>
+                    <td>{entry.title}</td>
                     <td>{entry.artist}</td>
-                    <td>{entry.albumName}</td>
+                    <td>{entry.album}</td>
                     <td>{entry.genre}</td>
-                    <td>{entry.releaseDate}</td>
+                    <td>{entry.release_date}</td>
                     <button>Delete Song</button>
                 </tr>
                 );

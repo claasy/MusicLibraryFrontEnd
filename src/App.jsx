@@ -4,6 +4,7 @@ import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import AddSongForm from './Components/AddSong/AddSongForm';
 import NavigationBar from './Components/NavigationBar/NavigationBar';
 import SearchBarForm from './Components/SearchBarForm/SearchBarForm';
+import './App.css'
 
 function App() {
 
@@ -29,12 +30,27 @@ function App() {
   }
 
   return (
-    <div>
-      <NavigationBar />
-      <SearchBarForm />
-      <AddSongForm addNewSongProperty={addNewSong} />
-      <DisplayMusic parentEntries={entries} />
-      
+    <div className='container-fluid'>
+      <div className='row'>
+        <div className='border-box'>
+          <NavigationBar />
+        </div>
+      </div>
+      <div className='row'>
+        <div className='border-box'>
+          <SearchBarForm />
+        </div>
+      </div>
+      <div className='row'> 
+        <div className='border-box'>
+          <AddSongForm addNewSongProperty={addNewSong} />
+        </div>
+      </div>  
+      <div className='row'>
+        <div className='border-box'>
+          <DisplayMusic parentEntries={entries} />
+        </div>
+      </div>
     </div>
   );
 }
