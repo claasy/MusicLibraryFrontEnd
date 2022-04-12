@@ -29,6 +29,21 @@ function App() {
     setEntries(tempEntries);
   }
 
+  async function deleteSong(id) {
+
+    let response = await axios.delete('http://127.0.0.1:8000/api/music/', [id])
+    if(response.status === 201){
+      await getAllSongs();
+    }
+    // handle the delete here
+    // refresh the display 
+  }
+
+  const searchFilter = (searchTerm) => {
+    // filter the data based upon the provided search term
+    // return the filtered results and then redisplay the table
+  }
+
   return (
     <div className='container-fluid'>
       <div className='row'>
@@ -48,7 +63,7 @@ function App() {
       </div>  
       <div className='row'>
         <div className='border-box'>
-          <DisplayMusic parentEntries={entries} />
+          <DisplayMusic parentEntries={entries} deleteSong={deleteSong} />
         </div>
       </div>
     </div>

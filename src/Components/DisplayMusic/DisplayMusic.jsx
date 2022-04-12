@@ -2,6 +2,27 @@ import React from 'react';
 
 
 const DisplayMusic = (props) => {
+
+const handleDelete = (id) => {
+   
+    // do something here 
+
+    // function handleSubmit(event) {
+    //     event.preventDefault();
+    //     let newSong = {
+    //         songTitle: songTitle,
+    //         artist: artist,
+    //         albumName: albumName,
+    //         genre: genre,
+    //         releaseDate: releaseDate
+    //     };
+    //     console.log(newSong);
+    //     props.addNewSongProperty(newSong)
+
+    props.deleteSong(id)
+}
+
+
     return ( 
         <table className='table'>
             <thead>
@@ -23,7 +44,7 @@ const DisplayMusic = (props) => {
                     <td>{entry.album}</td>
                     <td>{entry.genre}</td>
                     <td>{entry.release_date}</td>
-                    <button>Delete Song</button>
+                    <button onClick={() => handleDelete(entry.id)}>Delete Song</button>
                 </tr>
                 );
             })}
