@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import AddSongForm from './Components/AddSong/AddSongForm';
+import NavigationBar from './Components/NavigationBar/NavigationBar';
 
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
 
   return (
     <div>
-      <DisplayMusic parentEntries={entries} />
+      <NavigationBar />
       <AddSongForm addNewSongProperty={addNewSong} />
-
+      <DisplayMusic parentEntries={entries} />
+      
     </div>
   );
 }
