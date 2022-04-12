@@ -1,3 +1,5 @@
+import React from 'react';
+
 
 const DisplayMusic = (props) => {
     return ( 
@@ -20,6 +22,7 @@ const DisplayMusic = (props) => {
                     <td>{entry.albumName}</td>
                     <td>{entry.genre}</td>
                     <td>{entry.releaseDate}</td>
+                    <button>Delete Song</button>
                 </tr>
                 );
             })}

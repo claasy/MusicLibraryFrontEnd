@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const SearchBarForm = (props) => {
 
+    // const fields = ['Song Title','Artist','Album Name','Genre','Release Date']
     const [songTitle, setSongTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [albumName, setAlbumName] = useState('');
@@ -33,7 +34,7 @@ const SearchBarForm = (props) => {
             <input type='string' value={genre} onChange={(event) => setGenre(event.target.value)} />
             <label>Release Date</label>
             <input type='date' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)} />
-            <button type='submit'>Add Song</button>
+            <button type='submit'>Search</button>
         </form>
 
      );
