@@ -20,8 +20,7 @@ function App() {
   }
 
   async function addNewSong(entry){
-
-    let response = await axios.post('http://127.0.0.1:8000/api/music/', entry)
+    let response = await axios.post('http://127.0.0.1:8000/api/music/', entry);
     if(response.status === 201){
       await getAllSongs();
     }
@@ -29,8 +28,7 @@ function App() {
     setEntries(tempEntries);
   }
 
-  async function deleteSong(id) {
-
+  async function deleteSong(id){
     let response = await axios.delete('http://127.0.0.1:8000/api/music/', [id])
     if(response.status === 201){
       await getAllSongs();
